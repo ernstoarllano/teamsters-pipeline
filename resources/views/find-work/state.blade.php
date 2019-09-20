@@ -9,7 +9,9 @@
     <tbody>
         @foreach( $jobs as $job )
             <tr>
-                <td>{{ $job['title'] }}</td>
+                <td>
+                    <a href="/find-work/{{ $state }}/{{ $job['slug'] }}">{{ $job['contractor'] }}</a>
+                </td>
             </tr>
         @endforeach
     </tbody>
