@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Job;
+use App\State;
 
 class JobController extends Controller
 {
@@ -17,6 +18,20 @@ class JobController extends Controller
         return view('find-work/job', [
             'job'   => Job::where('slug', $jobSlug)->firstOrFail(),
             'state' => $stateSlug
+        ]);
+    }
+
+    /**
+     * Get jobs in a state
+     *
+     * @param string $stateSlug
+     */
+    public function getJobs($stateSlug) {
+        $state = State::where('slug', $stateSlug)->firstOrFail();
+
+        return view('find-work/state', [
+            'jobs'  => Job::where('state_id', $state->id)->get()->toArray(),
+            'state' => $state->slug
         ]);
     }
 }

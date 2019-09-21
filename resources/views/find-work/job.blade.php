@@ -24,12 +24,7 @@
         @if( ! empty($job->local_union) )
             <div class="mb-4">
                 <span class="block font-semibold">Local Union</span>
-                <span>
-                    @php
-                        $unions = json_decode($job['local_union'], true);
-                    @endphp
-                    {{ implode(', ', $unions['union']) }}
-                </span>
+                <span>{{ $job->local_union }}</span>
             </div>
         @endif
         @if( ! empty($job->contractor) )
