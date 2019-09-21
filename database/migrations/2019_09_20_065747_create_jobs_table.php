@@ -16,13 +16,14 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
             $table->json('local_union')->nullable();
-            $table->date('job_notification_date')->nullable();
+            $table->timestamp('job_notification_date')->nullable();
             $table->string('contractor')->nullable();
             $table->string('company')->nullable();
             $table->integer('state_id')->unsigned();
             $table->foreign('state_id')->references('id')->on('states');
             $table->longText('work_description')->nullable();
             $table->string('superintendent')->nullable();
+            $table->timestamp('start_date')->nullable();
             $table->string('slug')->unique();
             $table->timestamps();
         });

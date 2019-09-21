@@ -27,6 +27,12 @@
                 <span>{{ $job->local_union }}</span>
             </div>
         @endif
+        @if( ! empty($job->job_notification_date) )
+            <div class="mb-4">
+                <span class="block font-semibold">Job Notification Date</span>
+                <span>{{ \Carbon\Carbon::parse($job['job_notification_date'])->format('m/d/Y') }}</span>
+            </div>
+        @endif
         @if( ! empty($job->contractor) )
             <div class="mb-4">
                 <span class="block font-semibold">Contractor</span>
@@ -55,6 +61,12 @@
             <div class="mb-4">
                 <span class="block font-semibold">Superintendent</span>
                 <span>{{ $job->superintendent }}</span>
+            </div>
+        @endif
+        @if( ! empty($job->start_date) )
+            <div class="mb-4">
+                <span class="block font-semibold">Start Date</span>
+                <span>{{ \Carbon\Carbon::parse($job['start_date'])->format('m/d/Y') }}</span>
             </div>
         @endif
     </div>
