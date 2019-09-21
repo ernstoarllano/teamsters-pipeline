@@ -3,6 +3,24 @@
 @section('content')
     <div class="px-8">
         <h1 class="text-6xl">{{ $job->contractor }}</h1>
+        <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex flex-row flex-no-wrap items-center mb-5">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="/">Home</a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="ml-4">
+                <a itemprop="item" href="/find-work">Find Work</a>
+                <meta itemprop="position" content="2" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="ml-4">
+                <a itemprop="item" href="/find-work/{{ $state }}">{{ ucfirst($state) }}</a>
+                <meta itemprop="position" content="3" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="ml-4">
+                <span itemprop="name">{{ $job->contractor }}</span>
+                <meta itemprop="position" content="4" />
+            </li>
+        </ol>
         @if( ! empty($job->local_union) )
             <div class="mb-4">
                 <span class="block font-semibold">Local Union</span>
