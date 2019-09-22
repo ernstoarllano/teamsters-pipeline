@@ -30,7 +30,7 @@ class JobController extends Controller
         $state = State::where('slug', $stateSlug)->firstOrFail();
 
         return view('find-work/state', [
-            'jobs'  => Job::where('state_id', $state->id)->get()->toArray(),
+            'jobs'  => Job::where('state_id', $state->id)->latest('start_date')->get()->toArray(),
             'state' => $state->slug
         ]);
     }
