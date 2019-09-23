@@ -19,6 +19,18 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
+        'username' => $faker->userName,
+        'street' => $faker->streetAddress,
+        'city' => $faker->city,
+        'state' => $faker->state,
+        'postcode' => $faker->postcode,
+        'phone' => $faker->phoneNumber,
+        'available' => $faker->boolean($chanceOfGettingTrue = 50),
+        'alerts' => $faker->boolean($chanceOfGettingTrue = 50),
+        'last_called' => $faker->date($format = 'Y-m-d H:i:s', $max = 'now'),
+        'previous_job_state' => 1,
+        'previous_contractor' => $faker->company,
+        'job_id' => $faker->biasedNumberBetween($min = 1, $max = 50, $function = 'sqrt'),
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

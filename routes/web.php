@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/find-work', function() {
     return view('/find-work/overview');
 });
-
 Route::get('/find-work/{state}', 'JobController@getJobs');
 Route::get('/find-work/{state}/{job}', 'JobController@getJob');
+
+Route::get('/admin/members', 'AdminController@getMembers');
