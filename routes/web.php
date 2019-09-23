@@ -22,3 +22,5 @@ Route::get('/find-work/{state}', 'JobController@getJobs');
 Route::get('/find-work/{state}/{job}', 'JobController@getJob');
 
 Route::get('/admin/members', 'AdminController@getMembers');
+Route::get('/admin/jobs', 'AdminController@getJobs');
+Route::get('/admin/jobs/{job}', 'AdminController@getJob');
