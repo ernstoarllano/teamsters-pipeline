@@ -24,6 +24,7 @@ class CreateJobsTable extends Migration
             $table->longText('work_description')->nullable();
             $table->string('superintendent')->nullable();
             $table->timestamp('start_date')->nullable();
+            $table->decimal('pay', 6, 2);
             $table->string('slug')->unique();
             $table->timestamps();
         });

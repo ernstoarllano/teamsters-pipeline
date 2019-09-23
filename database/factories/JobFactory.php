@@ -8,13 +8,14 @@ use App\Job;
 $factory->define(Job::class, function (Faker $faker) {
     return [
         'local_union'           => $faker->randomDigit,
-        'job_notification_date' => $faker->date($format = 'Y-m-d H:i:s', $max = 'now'),
+        'job_notification_date' => $faker->date('Y-m-d H:i:s', 'now'),
         'contractor'            => $faker->company,
         'company'               => $faker->company,
         'state_id'              => 1,
         'work_description'      => $faker->text,
         'superintendent'        => $faker->name,
-        'start_date'            => $faker->date($format = 'Y-m-d H:i:s', $max = 'now'),
+        'start_date'            => $faker->date('Y-m-d H:i:s', 'now'),
+        'pay'                   => $faker->randomFloat(2, 1999, 4999),
         'slug'                  => $faker->uuid
     ];
 });

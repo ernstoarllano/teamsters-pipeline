@@ -32,7 +32,7 @@
                 </div>
             </div>
             @foreach( $members as $member )
-                <div class="flex flex-row items-center justify-between py-5">
+                <div class="flex flex-row items-center justify-between py-5 border-b-2 border-solid border-gray-400 last:border-b-0">
                     <div class="w-48 pr-3">
                         <span>{{ $member->name }}</span>
                     </div>

@@ -2,9 +2,12 @@ module.exports = {
     theme: {
         extend: {}
     },
-    variants: {},
+    variants: {
+        borderWidth: ["last"]
+    },
     plugins: [
         require("./plugins/css-grid")(["responsive"]),
-        require("./plugins/scale")(["hover"])
+        require("./plugins/scale")(["hover"]),
+        require("./plugins/transition")([])
     ]
 };
