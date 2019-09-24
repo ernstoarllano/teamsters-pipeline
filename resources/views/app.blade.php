@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Laravel</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     </head>
@@ -13,7 +15,7 @@
                     <div class="w-64 px-4 bg-gray-300"></div>
                     <div class="flex flex-row flex-no-wrap items-center justify-bewteen flex-1 px-8 py-3">
                         <div>
-                            <input class="block w-full max-w-xs border border-transparent bg-gray-100 border-gray-300 text-gray-900 rounded-lg pl-10 pr-4 py-2">
+                            <input class="block w-full max-w-xs pl-10 pr-4 py-2 text-gray-900 rounded-lg border border-transparent bg-gray-100 border-gray-300">
                         </div>
                         <div class="flex items-center justify-between ml-auto mr-0">
                             <ul class="flex flex-row items-center justify-between">
