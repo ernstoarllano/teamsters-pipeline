@@ -19,17 +19,32 @@
                         </div>
                         <div class="flex items-center justify-between ml-auto mr-0">
                             <ul class="flex flex-row items-center justify-between">
-                                <li>
-                                    <a href="#">Messages</a>
-                                </li>
-                                <li class="ml-4">
-                                    <a href="#">Saved Jobs</a>
-                                </li>
+                                @if(Route::has('login'))
+                                    @auth
+                                        <li>
+                                            <a href="#">Messages</a>
+                                        </li>
+                                        <li class="ml-4">
+                                            <a href="#">Saved Jobs</a>
+                                        </li>
+                                    @else
+                                        <li>
+                                            <a href="{{ route('login') }}">Login</a>
+                                        </li>
+                                        @if (Route::has('register'))
+                                            <li class="ml-4">
+                                                <a href="{{ route('register') }}">Register</a>
+                                            </li>
+                                        @endif
+                                    @endauth
+                                @endif
                             </ul>
-                            <button class="w-8 h-8 ml-8 rounded-full overflow-hidden" aria-labeledby="id">
-                                <span id="account" hidden>My Account</span>
-                                <img class="w-full h-full object-cover" src="https://pbs.twimg.com/profile_images/996570710305685504/DK-JzW4X.jpg">
-                            </button>
+                            @auth
+                                <button class="w-8 h-8 ml-8 rounded-full overflow-hidden" aria-labeledby="id">
+                                    <span id="account" hidden>My Account</span>
+                                    <img class="w-full h-full object-cover" src="https://pbs.twimg.com/profile_images/996570710305685504/DK-JzW4X.jpg">
+                                </button>
+                            @endauth
                         </div>
                     </div>
                 </nav>

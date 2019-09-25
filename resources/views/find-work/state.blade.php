@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('content')
     <h4 class="px-8 text-3xl">{{ ucfirst($state) }}</h4>
