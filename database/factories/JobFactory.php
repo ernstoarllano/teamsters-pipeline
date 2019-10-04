@@ -11,7 +11,7 @@ $factory->define(Job::class, function (Faker $faker) {
         'job_notification_date' => $faker->date('Y-m-d H:i:s', 'now'),
         'contractor'            => $faker->company,
         'company'               => $faker->company,
-        'state_id'              => 1,
+        'state_id'              => $faker->numberBetween(1, 50),
         'work_description'      => $faker->text,
         'superintendent'        => $faker->name,
         'start_date'            => $faker->date('Y-m-d H:i:s', 'now'),

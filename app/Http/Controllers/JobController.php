@@ -32,7 +32,7 @@ class JobController extends Controller
         return view('find-work/state', [
             'jobs'  => Job::where('state_id', $state->id)->latest('start_date')->paginate(12),
             'state' => $state->slug,
-            'count' => Job::all()->count()
+            'count' => Job::where('state_id', $state->id)->count()
         ]);
     }
 }
